@@ -111,7 +111,9 @@ set(CBDSM_SRC
     src/c++/num_util/num_util.cpp
 )
 add_library(_cbdsm MODULE ${CBDSM_SRC})
+message("target_include_directories --> CMAKE_CURRENT_SOURCE_DIR = ${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(_cbdsm PRIVATE src/c++)
+message("target_link_libraries --> CMAKE_CURRENT_SOURCE_DIR = ${CMAKE_CURRENT_SOURCE_DIR}")
 target_link_libraries(_cbdsm minpack port3 gfortran ${Boost_LIBRARIES})
 python_extension_module(_cbdsm)
 install(TARGETS _cbdsm LIBRARY DESTINATION bdsf)
