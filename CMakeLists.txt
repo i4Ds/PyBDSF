@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.18)
 project(PyBDSF C CXX Fortran)
 
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
 find_package(PythonExtensions REQUIRED)
 find_package(Python COMPONENTS Interpreter Development.Module REQUIRED)
 find_package(F2PY REQUIRED)
