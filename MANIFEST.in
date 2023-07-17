@@ -1,4 +1,5 @@
 # Required scikit-build files
+include ${RECIPE_DIR}/cross-linux.cmake
 include CMakeLists.txt
 
 # Required minpack sources
