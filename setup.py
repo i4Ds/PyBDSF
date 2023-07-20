@@ -13,7 +13,7 @@ if "CMAKE_CONDA_ARGS_FS" in os.environ:
         for i in range(len(args)):
             cmake_additional_args.append(args[i])
             print(f"{args[i]},")
-else
+else:
     print("------------------------- args not found --------------------------------")
 
 setup(
