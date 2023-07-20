@@ -3,6 +3,8 @@ import os
 
 cmake_additional_args = []
 
+print(".............................. START BUILD ....................................")
+
 if "CMAKE_CONDA_ARGS_FS" in os.environ:
     print("------------------------------- args found ------------------------------------------")
     args = list(filter(None, os.environ["CMAKE_ARGS"].split(" ")))
@@ -11,6 +13,8 @@ if "CMAKE_CONDA_ARGS_FS" in os.environ:
         for i in range(len(args)):
             cmake_additional_args.append(args[i])
             print(f"{args[i]},")
+else
+    print("------------------------- args not found --------------------------------")
 
 setup(
     name='bdsf',
