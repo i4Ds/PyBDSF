@@ -1,12 +1,16 @@
 from skbuild import setup  # This line replaces 'from setuptools import setup'
 import os
 
-cmake_args = []
+cmake_additional_args = []
 
-if "CMAKE_ARGS" in os.environ:
+if "CMAKE_CONDA_ARGS_FS" in os.environ:
+    print("------------------------------- args found ------------------------------------------")
     args = list(filter(None, os.environ["CMAKE_ARGS"].split(" ")))
+    print(f"length of args = {len(args)})
     if len(args) > 0:
-        cmake_args += [arg for arg in args if len(arg.split("DCMAKE_INSTALL_PREFIX")) == 1]
+        for i in range(len(args)):
+            cmake_additional_args.append(args[i])
+            print(f"{args[i]},"
 
 setup(
     name='bdsf',
@@ -16,7 +20,7 @@ setup(
     url='https://github.com/lofar-astron/PyBDSF',
     description='Blob Detection and Source Finder',
     long_description=open('README.rst', 'rt').read(),
-    cmake_args = cmake_args,
+    cmake_args=cmake_additional_args,
     long_description_content_type='text/x-rst',
     platforms='Linux, Mac OS X',
     packages=['bdsf', 'bdsf.nat'],
