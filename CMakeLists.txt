@@ -15,6 +15,7 @@ set(CMAKE_C_COMPILER $ENV{CC})
 
 # where is the target environment
 set(CMAKE_FIND_ROOT_PATH $ENV{PREFIX} $ENV{BUILD_PREFIX}/$ENV{HOST}/sysroot)
+set(CMAKE_SYSROOT_LINK $ENV{BUILD_PREFIX}/$ENV{HOST}/sysroot)
 
 # search for programs in the build host directories
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
