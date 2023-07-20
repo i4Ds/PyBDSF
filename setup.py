@@ -6,11 +6,11 @@ cmake_additional_args = []
 if "CMAKE_CONDA_ARGS_FS" in os.environ:
     print("------------------------------- args found ------------------------------------------")
     args = list(filter(None, os.environ["CMAKE_ARGS"].split(" ")))
-    print(f"length of args = {len(args)})
+    print(f"length of args = {len(args)}")
     if len(args) > 0:
         for i in range(len(args)):
             cmake_additional_args.append(args[i])
-            print(f"{args[i]},"
+            print(f"{args[i]},")
 
 setup(
     name='bdsf',
